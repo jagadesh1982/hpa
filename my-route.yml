@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  creationTimestamp: null
+  labels:
+    run: node-load
+  name: my-route
+  selfLink: /apis/route.openshift.io/v1/namespaces/myproject/routes/my-route
+spec:
+  host: my-route-myproject.192.168.99.100.nip.io
+  to:
+    kind: Service
+    name: node-service
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress: null
